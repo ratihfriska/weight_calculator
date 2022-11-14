@@ -18,7 +18,6 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender = Gender.male;
   int height = 150;
-  //int weight = 60;
   int age = 20;
 
   @override
@@ -97,8 +96,8 @@ class _InputPageState extends State<InputPage> {
                     data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.white,
                       inactiveTrackColor: const Color(0xFF8D8E98),
-                      thumbColor: const Color(0xFFEB1555),
-                      overlayColor: const Color(0x29EB1555),
+                      thumbColor: Color.fromARGB(255, 21, 85, 235),
+                      overlayColor: Color.fromARGB(41, 21, 35, 235),
                       thumbShape:
                           const RoundSliderThumbShape(enabledThumbRadius: 15.0),
                       overlayShape:
@@ -174,16 +173,14 @@ class _InputPageState extends State<InputPage> {
             onTap: () {
               Calculator cal = Calculator(
                   height: height, age: age, gender: selectedGender);
-              String bmi = cal.calculateBMI();
+              String idealWeight = cal.calculateIdealWeight();
               String result = cal.getResult();
-              String information = cal.getInterpretation();
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => ResultPage(
                     result: result,
-                    bmi: bmi,
-                    information: information,
+                    idealWeight: idealWeight,
                   ),
                 ),
               );

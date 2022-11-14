@@ -5,11 +5,11 @@ import 'package:weight_calculator/components/bottom_button.dart';
 
 class ResultPage extends StatelessWidget {
   const ResultPage(
-      {required this.result, required this.bmi, required this.information});
+      {required this.result, required this.idealWeight});
 
   final String result;
-  final String bmi;
-  final String information;
+  final String idealWeight;
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,16 +47,9 @@ class ResultPage extends StatelessWidget {
                     style: resultTextStyle,
                   ),
                   Text(
-                    bmi,
+                    idealWeight,
                     style: bmiTextStyle,
                   ),
-                  Text(
-                    information,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 22.0,
-                    ),
-                  )
                 ],
               ),
             ),
