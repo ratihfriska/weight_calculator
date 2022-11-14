@@ -17,15 +17,15 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender = Gender.male;
-  int height = 160;
-  int weight = 60;
-  // int age = 20;
+  int height = 150;
+  //int weight = 60;
+  int age = 20;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BMI CALCULATOR'),
+        title: const Text('IDEAL WEIGHT CALCULATOR'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -106,7 +106,7 @@ class _InputPageState extends State<InputPage> {
                     ),
                     child: Slider(
                       value: height.toDouble(),
-                      min: 120.0,
+                      min: 100.0,
                       max: 220.0,
                       onChanged: (double value) {
                         setState(() {
@@ -129,11 +129,11 @@ class _InputPageState extends State<InputPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
-                          'WEIGHT',
+                          'AGE',
                           style: labelTextStyle,
                         ),
                         Text(
-                          weight.toString(),
+                          age.toString(),
                           style: numberTextStyle,
                         ),
                         Row(
@@ -143,8 +143,8 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(() {
-                                  if (weight >= 30) {
-                                    weight--;
+                                  if (age >= 1) {
+                                    age--;
                                   }
                                 });
                               },
@@ -156,7 +156,7 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
                                 setState(() {
-                                  weight++;
+                                  age++;
                                 });
                               },
                             ),
@@ -173,7 +173,7 @@ class _InputPageState extends State<InputPage> {
             buttonTitle: 'CALCULATE',
             onTap: () {
               Calculator cal = Calculator(
-                  height: height, weight: weight, gender: selectedGender);
+                  height: height, age: age, gender: selectedGender);
               String bmi = cal.calculateBMI();
               String result = cal.getResult();
               String information = cal.getInterpretation();
