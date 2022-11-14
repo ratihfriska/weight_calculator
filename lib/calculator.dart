@@ -17,25 +17,15 @@ class Calculator {
   }
 
   String getResult() {
-    if (_bmi <= 18.5) {
-      return 'Under Bobot';
-    } else if (_bmi >= 18.5 && _bmi <= 23) {
-      return 'Sehat dekkk';
-    } else if (_bmi >= 23 && _bmi <= 25) {
-      return 'Over Bobot';
-    } else if (_bmi >= 25 && _bmi <= 30) {
-      return 'Obesitas 1';
+    if (_bmi == _bmi) {
+      return 'Your Ideal Weight';
     } else {
-      return 'Obesitas 2';
+      return 'Oh noo, yo dont have ideal weight';
     }
   }
 
   String getInterpretation() {
-    if (_bmi >= 23 && _bmi <= 25) {
-      return 'You have a higher than normal body weight. Try to exercise more.';
-    } else if (_bmi >= 18.5 && _bmi <= 23) {
-      return 'You have a normal body weight. Good job!';
-    } else if (_bmi <= 18.5) {
+    if (_bmi == _bmi) {
       return 'You have a normal body weight. Good job!';
     } else {
       return 'You have a lower than normal body weight. You can eat a bit more.';
